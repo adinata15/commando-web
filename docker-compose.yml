@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: svelte_test
+    restart: always
+    ports:
+      - "3000:3000"
+      # - "3010:3010"
+      # - "8080:8080"
+      # - "5050:5050"
+      - "24678:24678"
+    volumes:
+      - ./:./
