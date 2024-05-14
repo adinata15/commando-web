@@ -1,76 +1,92 @@
 <script lang="ts">
-  import MenuItem from "./MenuItem.svelte";
-
-  let menuItems = 
-  [
+  let subPages = [
     {
       id: 0,
-      name: "Home",
-      link: "#",
-      subMenu: [
-        {
-          id: 0,
-          name: "About",
-          link: "/about",
-        },
-        {
-          id: 1,
-          name: "About 1",
-          link: "/about-1",
-        }
-      ],
+      name: "TENTANG KAMI",
+      link: "/about",
     },
     {
       id: 1,
-      name: "Contact Us",
-      link: "/contact-us",
-      subMenu: [
-        {
-          id: 0,
-          name: "About",
-          link: "/about",
-        }
-      ],
+      name: "PRODUK",
+      link: "/about",
     },
-  ]
+    {
+      id: 2,
+      name: "sertifikasi",
+      link: "/certification",
+    },
+
+    {
+      id: 3,
+      name: "hubungi kami",
+      link: "/contact-us",
+    },
+
+    {
+      id: 4,
+      name: "katalog",
+      link: "/shop",
+    },
+  ];
 </script>
 
-<!-- reference from tesla.com -->
-<nav class="relative flex flex-row justify-between items-center bg-orange-500 h-12">
+<!-- Navbar -->
+<div
+  class="Navbar flex flex-col z-10 fixed top-0 left-0 right-0 w-screen h-[20vh] min-h-10 bg-white"
+>
+  <div
+    class="Navigation-top flex h-1/2 w-screen justify-between items-center px-6 py-2"
+  >
+    <img
+      class="object-contain h-full max-w-full"
+      loading="lazy"
+      alt="Daryo"
+      src="./logo.png"
+    />
 
-  <!-- left: logo -->
-  <div class="h-full bg-emerald-700 m-2">
-    <img class="h-full" src="logo.png" alt="some logo"/>
-    <!-- Logo -->
+    <div class="Items flex self-stretch justify-end items-center gap-12">
+      {#each subPages as page}
+        <a
+          href={page.link}
+          class="Page text-black text-xl font-medium font-['Inter'] uppercase no-underline"
+          >{page.name}</a
+        >
+      {/each}
+      <div
+        class="Button px-6 py-3.5 bg-black rounded-lg shadow justify-center items-center gap-2 flex"
+      >
+        <div
+          class="Button text-white text-base font-medium font-['Inter'] leading-normal"
+        >
+          Button
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- center: menu -->
-  <div class="h-full flex space-x-2 justify-center items-center bg-green-700 m-2">
-    {#each menuItems as menu}
-      <MenuItem {...menu}/>
-    {/each}
+  <div
+    class="Navigation-bottom h-1/2 w-full flex self-stretch justify-end items-center gap-12 py-2 px-6"
+  >
+    <div class="flex h-1/2 min-h-10 items-center justify-center gap-2">
+      <img
+        class="object-contain h-full max-w-full"
+        src="./phone-call.png"
+        alt="phone"
+      />
+      <div class="text-black text-xl font-medium font-['Inter']">
+        (061) 4566725
+      </div>
+    </div>
+
+    <div class="flex h-1/2 min-h-10 items-center justify-center gap-2">
+      <img
+        class="object-contain h-full max-w-full"
+        src="./email.png"
+        alt="mail"
+      />
+      <div class="text-black text-xl font-medium font-['Inter']">
+        sales@denryo.co.id
+      </div>
+    </div>
   </div>
-
-  <!-- right: settings -->
-  <div class="flex space-x-2 justify-end items-center bg-red-700 m-2">
-
-    <!-- Globe -->
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
-    </svg>
-
-    <!-- Phone -->
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-    </svg>
-
-  </div>
-
-</nav>
-
-
-
-<style>
-
-
-</style>
+</div>

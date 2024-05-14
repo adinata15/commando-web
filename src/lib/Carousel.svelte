@@ -4,7 +4,7 @@
     {
       id: 0,
       title: "Slide 1",
-      img_src: "./nature_placeholder.jpg",
+      img_src: "./denryo_placeholder.jpg",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
@@ -57,7 +57,7 @@
   
 </script>
 
-<div id="carouselDarkVariant" class="relative w-screen h-screen overflow-x-scroll">
+<div id="carouselDarkVariant" class="relative w-screen h-screen overflow-hidden">
 
   <!-- Carousel indicators -->
   <div class="absolute inset-x-0 bottom-0 z-[2] px-[15%] pb-4 flex list-none justify-center gap-1">
@@ -79,20 +79,20 @@
     <div class="relative overflow-hidden flex justify-center items-center col-start-1 col-end-1 row-start-1 row-end-1 shrink-0 {slide.id == currSlide ? 'slide-move-in':'slide-move-out'}">
       <img
         src={slide.img_src}
-        class="block w-screen h-screen object-cover"
+        class="block w-screen h-full object-cover"
         alt="some placeholder" />
-      <div class="absolute block inset-x-[15%] bottom-5 py-5 text-center text-black md:block">
+      <!-- <div class="absolute block inset-x-[15%] bottom-5 py-5 text-center text-black md:block">
         <h5 class="text-xl">{slide.title}</h5>
         <p>
           {slide.description}
         </p>
-      </div>
+      </div> -->
     </div>
 {/each}
   </div>
 
   <!-- Carousel controls - prev item-->
-  <button class="absolute inset-y-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" 
+  <button class="absolute inset-y-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" 
     type="button"
     on:click={() => handlePrev()}
     >
@@ -116,7 +116,7 @@
     >
   </button>
   <!-- Carousel controls - next item-->
-  <button class="absolute right-0 inset-y-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-black opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-black hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+  <button class="absolute right-0 inset-y-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-black focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
     type="button"
     on:click={() => handleNext()}
     >
