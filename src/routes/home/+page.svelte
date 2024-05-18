@@ -36,7 +36,7 @@
 	let products = 
 	[
 		{
-			img_src: "./simbol_denryo.png",
+			img_src: "./product_1.jpg",
 			description: "Produk"
 		},
 		{
@@ -52,7 +52,7 @@
 			description: "Produk"
 		},
 		{
-			img_src: "./simbol_denryo.png",
+			img_src: "./product_2.jpg",
 			description: "Produk"
 		},
 		{
@@ -147,10 +147,10 @@
 					<div class="p-1">
 					<Card.Root>
 						<Card.Content
-						class="flex flex-col aspect-square items-center justify-center p-6"
+						class="flex flex-col items-center justify-center p-1"
 						>
-						<img src={product.img_src} class="w-full h-2/3 object-contain" alt="produk" />
-						<span class="text-2xl font-semibold">{product.description}</span>
+						<img src={product.img_src} class="min-w-full h-full object-contain" alt="produk" />
+						<!-- <span class="text-2xl font-semibold">{product.description}</span> -->
 						</Card.Content>
 					</Card.Root>
 					</div>
