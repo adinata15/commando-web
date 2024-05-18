@@ -1,54 +1,113 @@
-<script>
-    import Carousel from "../../lib/Carousel.svelte";
-    import Navbar from "../../lib/Navbar.svelte";
-
-	let subheadings = ["bg-blue-500", "bg-red-500", "bg-green-500", "bg-yellow-500"]
-	let heading__font = "text-4xl font-semibold font-['Inter'] leading-10";
-	let subheading__font = "text-2xl font-normal font-['Inter'] leading-9";
-	let body__font = "text-xl font-medium font-['Inter'] leading-loose";
+<script lang="ts">
+    import FullPageCarousel from "$lib/FullPageCarousel.svelte";
+	import { Button } from "@/components/ui/button/index.js";
+	import * as Card from "$lib/components/ui/card/index.js";
+	import * as Carousel from "$lib/components/ui/carousel/index.js";
+	import Autoplay from "embla-carousel-autoplay";
 
 	let cards = 
 	[
 		{
-		id: 0,
-		title: "title",
-		img_src: "./email.png",
-		description: "24/7 service"
+			id: 0,
+			title: "title",
+			img_src: "./email.png",
+			description: "24/7 service"
 		},
 		{
-		id: 1,
-		title: "title",
-		img_src: "./email.png",
-		description: "24/7 service"
+			id: 1,
+			title: "title",
+			img_src: "./email.png",
+			description: "24/7 service"
 		},
 		{
-		id: 2,
-		title: "title",
-		img_src: "./email.png",
-		description: "24/7 service"
+			id: 2,
+			title: "title",
+			img_src: "./email.png",
+			description: "24/7 service"
 		}, 
  		{
-		id: 3,
-		title: "title",
-		img_src: "./email.png",
-		description: "24/7 service"
+			id: 3,
+			title: "title",
+			img_src: "./email.png",
+			description: "24/7 service"
 		}, 
 	]
 
+	let products = 
+	[
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			description: "Produk"
+		},
+	]
 
+	let news = 
+	[
+		{
+			img_src: "./simbol_denryo.png",
+			date: "2015-01-01",
+			description: "Berita yang sangat mengcengangkan"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			date: "2015-01-01",
+			description: "Ai pang sai liao"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			date: "2015-01-01",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			date: "2015-01-01",
+			description: "Produk"
+		},
+		{
+			img_src: "./simbol_denryo.png",
+			date: "2015-01-01",
+			description: "Produk"
+		},
+		]
 </script>
 
 <div class="DemoPage relative flex flex-col w-screen overflow-x-hidden">
-
-	<Navbar/>
 
 	<!-- Landing page -->
 	<div class="LandingPage flex flex-col w-screen mt-[20vh] h-[80vh]">
 		<!-- landing view -->
 		<div class="Header h-full flex flex-col justify-center items-center gap-6">
-			<Carousel />
+			<FullPageCarousel />
 		<!-- <div class="LandingPageTitle self-stretch text-center text-black text-6xl font-bold font-['Inter']">Landing page title</div>
-		<div class="AndASubheadingDescribingYourSiteToo self-stretch text-center text-zinc-500 text-2xl font-normal font-['Inter'] leading-9">And a subheading describing your site, too</div>
+		<div class="AndASubheadingDescribingYourSiteToo self-stretch text-center text-zinc-500 ">And a subheading describing your site, too</div>
 		<div class="Button px-6 py-3.5 bg-black rounded-lg shadow justify-center items-center gap-2 flex">
 			<div class="Button text-white text-base font-medium font-['Inter'] leading-normal">Button</div>
 		</div> -->
@@ -56,109 +115,151 @@
 	</div>
 
 	<!-- Four stuff -->
-	<div class="flex gap-6 justify-center items-center h-1/6 w-screen py-2">
+	<div class="flex gap-6 justify-center items-center h-1/6 w-screen p-6">
 		{#each cards as card}
 		<div class="Card h-full w-50 flex justify-center items-center gap-2 p-2 border-solid border-4 border-gray-600 rounded-2xl">
 			<img class="h-2/3 max-w-20 object-contain" src={card.img_src} alt="icon" />
 			<div class="flex flex-col">
-				<h1 class="{subheading__font} uppercase"> {card.title} </h1>
-				<p class="{body__font}"> {card.description} </p>
+				<h2 class="uppercase"> {card.title} </h2>
+				<p> {card.description} </p>
 			</div>
 		</div>
 		{/each}
 	</div>
 
+	<!-- Products carousel -->
+	<div class="w-screen flex flex-col p-6 h-auto">
+		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Inter'] leading-10 uppercase">Products and services</h1>
+		<div class="w-full h-1 bg-gray-500" />
+	</div>
+	<div class="Products w-full h-56 flex justify-center items-center">
+		<Carousel.Root
+			plugins={[
+				Autoplay({
+				delay: 2000,
+				}),
+			]}	
+			class="w-2/3"
+		>
+			<Carousel.Content class="-ml-1">
+				{#each products as product}
+				<Carousel.Item class="pl-1 basis-1/5">
+					<div class="p-1">
+					<Card.Root>
+						<Card.Content
+						class="flex flex-col aspect-square items-center justify-center p-6"
+						>
+						<img src={product.img_src} class="w-full h-2/3 object-contain" alt="produk" />
+						<span class="text-2xl font-semibold">{product.description}</span>
+						</Card.Content>
+					</Card.Root>
+					</div>
+				</Carousel.Item>
+				{/each}
+			</Carousel.Content>
+			<Carousel.Previous />
+			<Carousel.Next />
+		</Carousel.Root>	
+	</div>
+
 	<!-- Subsection -->
 	<div class="Subsection1 h-screen w-screen flex justify-between">
-		<div class="DetailLeft h-screen w-1/2 flex flex-col justify-center items-start px-6 bg-blue-500">
-		  <div class="Heading self-stretch text-black text-4xl font-semibold font-['Inter'] leading-10">Heading</div>
-		  <div class="ASubheadingForThisSectionAsLongOrAsShortAsYouLike self-stretch text-zinc-500 text-2xl font-normal font-['Inter'] leading-9">A subheading for this section, as long or as short as you like</div>
-		  <div class="Button flex px-6 py-3.5 bg-black rounded-lg justify-center items-center">
-			<div class="Button text-white text-base font-medium font-['Inter'] leading-normal">Button</div>
-		  </div>
+		<div class="DetailLeft h-screen w-1/2 flex flex-col justify-center items-start px-6 bg-white">
+		  <h1 class="Heading self-stretch uppercase">Asal usul the legen of aang</h1>
+		  <h2 class="ASubheadingForThisSectionAsLongOrAsShortAsYouLike self-stretch text-zinc-500 pt-2">
+			As a technology trading company we keep a firm grasp on market trends, and utilize our global network to provide our customers with the most up-to-date information, the best products, and the most reliable services. In cooperation with our manufacturing partners, it is our mission to promote industry and foster a prosperous society.”
+			Since SUN-WA was founded, the three elements that our company has strived to keep in harmony and develop are our customers, our shareholders and our employees; as well as electrics, electronics and machinery.
+		  </h2>
+		  <Button class="px-6 py-3.5 bg-black rounded-lg text-white text-base font-medium font-['Inter'] leading-normal" type="submit">Read More</Button>
 		</div>
-		<div class="ImageRight h-screen w-1/2 bg-red-400 flex items-center pr-6">
-			<img class="Image max-w-full" src="https://via.placeholder.com/624x400" alt="some images"/>
+		<div class="ImageRight h-screen w-1/2 bg-white flex items-center pr-6">
+			<img class="Image max-w-full" src="./denryo_placeholder.jpg" alt="some images"/>
+		</div>
+	</div>
+
+	<!-- News carousel -->
+	<div class="w-screen flex flex-col p-6 h-auto">
+		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Inter'] leading-10 uppercase">sio sio e gosip</h1>
+		<div class="w-full h-1 bg-gray-500" />
+	</div>
+
+	<div class="Products w-full p-6 h-80 flex justify-center items-center gap-2">
+		{#each news as news}
+		<div class="p-1 basis-1/5 ">
+			<Card.Root>
+				<Card.Content
+					class="flex flex-col max-w-1/5 h-full w-full items-start justify-center p-6"
+				>
+				<img src={news.img_src} class="max-w-full h-5/6 object-contain " alt="berita" />
+				<span class="text-sm">{news.date}</span>
+				<span class="text-lg font-semibold uppercase">{news.description}</span>
+				</Card.Content>
+			</Card.Root>
+		</div>
+		{/each}
+	</div>
+
+	<!-- Partners -->
+	<div class="w-screen flex flex-col p-6 h-auto">
+		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Inter'] leading-10 uppercase mx-auto">Peng yiu</h1>
+		<div class="w-full h-1 bg-gray-500" />
+
+		<div class="Products w-full my-2 h-56 flex justify-between items-center gap-2 border-gray-400 border-2">
+			{#each products as product}
+			<div class="p-1 h-5/6">
+				<img src={product.img_src} class="max-w-full h-5/6 object-contain " alt={product.description} />
+			</div>
+			{/each}
 		</div>
 	</div>
 
 
 	<!-- Another subsection -->
-	<div class="Subsection1 h-screen w-screen flex justify-between">
+	<!-- <div class="Subsection1 h-screen w-screen flex justify-between">
 		<div class="ImageLeft h-screen w-1/2 bg-red-400 flex items-center pl-6">
 			<img class="Image max-w-full" src="https://via.placeholder.com/624x400" alt="some images"/>
 		</div>
 		<div class="DetailLeft h-screen w-1/2 flex flex-col justify-center items-start px-6 bg-blue-500">
-		  <div class="Heading self-stretch text-black text-4xl font-semibold font-['Inter'] leading-10">Heading</div>
-		  <div class="ASubheadingForThisSectionAsLongOrAsShortAsYouLike self-stretch text-zinc-500 text-2xl font-normal font-['Inter'] leading-9">A subheading for this section, as long or as short as you like</div>
+		  <h1 class="Heading">Heading</h1>
+		  <h2 class="ASubheadingForThisSectionAsLongOrAsShortAsYouLike self-stretch text-zinc-500 ">A subheading for this section, as long or as short as you like</h2>
 		  <div class="Button flex px-6 py-3.5 bg-black rounded-lg justify-center items-center">
 			<div class="Button text-white text-base font-medium font-['Inter'] leading-normal">Button</div>
 		  </div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Subheadings page -->
-	<div class="SubheadingPage flex flex-col h-screen w-screen justify-between">
-		<div class="Heading h-[20vh] p-6 text-black text-4xl font-semibold font-['Inter'] leading-10 bg-purple-500">Heading</div>
+	<!-- <div class="SubheadingPage flex flex-col h-screen w-screen justify-between">
+		<h1 class="Heading h-[20vh] p-6 bg-purple-500">Heading</h1>
 		<div class="Subheadings h-[80vh] grid grid-cols-2 grid-row-2">
-{#each subheadings as subheading}
+{#each subheadings as subheading} -->
 			<!-- the full parent/viewport here is already done per grid -->
-			<div class="Subheading h-full w-full flex flex-col justify-center items-start p-6 gap-6 {subheading}">
-				<div class="w-8 h-8 justify-center items-center flex">
+			<!-- <div class="Subheading h-full w-full flex flex-col justify-center items-start p-6 gap-6 {subheading}">
+				<div class="w-8 h-8 justify-center items-center flex"> -->
 					<!-- Globe -->
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
 					</svg>
 				</div>
-				<div class="SubheadingTitle self-stretch text-black text-2xl font-normal font-['Inter'] leading-9">Subheading</div>
-				<div class="SubheadingContent self-stretch text-zinc-500 text-xl font-medium font-['Inter'] leading-loose">Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </div>
+				<h2 class="SubheadingTitle self-stretch text-black">Subheading</h2>
+				<p class="SubheadingContent self-stretch text-zinc-500">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </p>
 			</div>
 {/each}
 		</div>
-	</div>
-
-	<!-- Footer -->
-	<div class="Footer h-screen w-screen">
-		<!-- Footer heading -->
-		<div class="HeadingWithBackground h-[60vh] w-full px-80 py-28 bg-neutral-100 justify-center items-center flex">
-		  <div class="Header grow shrink basis-0 self-stretch flex-col justify-start items-center gap-6 flex">
-			<div class="Heading self-stretch text-center text-black text-4xl font-semibold font-['Inter'] leading-10">Heading</div>
-			<div class="PlusASubheadingForYourSiteSFooter self-stretch text-center text-zinc-500 text-2xl font-normal font-['Inter'] leading-9">Plus a subheading for your site’s footer</div>
-			<div class="Button px-6 py-3.5 bg-black rounded-lg shadow justify-center items-center gap-2 flex">
-			  <div class="Button text-white text-base font-semibold font-['Inter'] leading-7">Button</div>
-			</div>
-		  </div>
-		</div>
-	
-		<!-- Footer Links-->
-		<div class="FooterLinks flex flex-row w-full h-[40vh] bg-red-400 justify-between">
-			<div class="FooterSosMed h-full flex flex-col justify-between p-6 w-1/2">
-				<div class="SiteName text-black text-2xl font-normal font-['Inter'] leading-9">Site name</div>
-				<div class="SocialIcons flex justify-start items-start gap-2">
-{#each subheadings as subheading}
-					<div class="ButtonsIcon w-10 h-10 p-2 rounded justify-center items-center flex">
-						<div class="Icon grow shrink basis-0 self-stretch px-0.5 py-0.5 justify-center items-center flex">
-							<img class="Icon w-5 h-5" src="https://via.placeholder.com/20x20" alt="sosmed logo"/>
-						</div>
-					</div>
-{/each}
-				</div>
-			</div>
-	
-			<div class="FooterMenu h-full flex flex-col justify-between items-end gap-6 p-6 w-1/2">
-				<div class="Topic self-stretch text-black text-base font-medium font-['Inter'] leading-normal">Topic</div>
-				<div class="Page self-stretch text-zinc-700 text-base font-medium font-['Inter'] leading-normal">Page</div>
-				<div class="Page self-stretch text-zinc-700 text-base font-medium font-['Inter'] leading-normal">Page</div>
-				<div class="Page self-stretch text-zinc-700 text-base font-medium font-['Inter'] leading-normal">Page</div>
-			</div>
-	
-		</div>
-
-		<!-- Final page divider -->
-		<div class="Divider w-screen h-px border border-neutral-200" />
-	</div>
+	</div> -->
 
   </div>
 
-  <style>
+  <style lang="postcss">
+	h1{
+		@apply text-4xl font-semibold font-['Inter'] leading-10;
+	}
+	
+	h2{
+		@apply text-2xl font-normal font-['Inter'] leading-9;
+	}
+
+	p{
+		@apply text-xl font-medium font-['Inter'] leading-loose;
+	}
   </style>

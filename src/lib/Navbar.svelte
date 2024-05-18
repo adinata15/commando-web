@@ -28,6 +28,14 @@
       link: "/shop",
     },
   ];
+
+  let chosenSubMenu = -1
+
+  // let handleMenuClick = (event:Event) => 
+  // {
+  //   // chosenSubMenu = id
+  //   console.log(event.target.class);
+  // }
 </script>
 
 <!-- Navbar -->
@@ -35,7 +43,7 @@
   class="Navbar flex flex-col z-10 fixed top-0 left-0 right-0 w-screen h-[20vh] min-h-10 bg-white"
 >
   <div
-    class="Navigation-top flex h-1/2 w-screen justify-between items-center px-6 py-2"
+    class="Navigation-top relative flex h-1/2 w-screen justify-between items-center px-6 py-2"
   >
     <img
       class="object-contain h-full max-w-full"
@@ -51,8 +59,19 @@
           class="Page text-black text-xl font-medium font-['Inter'] uppercase no-underline"
           >{page.name}</a
         >
-      {/each}
-      <div
+        <!-- <button
+          class="Page text-black text-xl font-medium font-['Inter'] uppercase no-underline cursor-pointer w-full h-full text-nowrap" 
+          on:click={ () => { chosenSubMenu = page.id}}
+        >
+          {page.name}
+        </button> -->
+        {/each}
+
+        <div class="absolute bg-red-500 inset-0 popup-submenu {chosenSubMenu === -1 ? "opacity-0":"opacity-100"}">
+          {chosenSubMenu}
+        </div>
+      
+        <!-- <div
         class="Button px-6 py-3.5 bg-black rounded-lg shadow justify-center items-center gap-2 flex"
       >
         <div
@@ -60,7 +79,7 @@
         >
           Button
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -90,3 +109,11 @@
     </div>
   </div>
 </div>
+
+<style>
+  .popup-submenu {
+    transform: translateY(100%);
+  }
+
+
+</style>
