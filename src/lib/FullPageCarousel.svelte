@@ -57,7 +57,7 @@
   
 </script>
 
-<div id="carouselDarkVariant" class="relative w-screen h-screen overflow-hidden">
+<div id="carouselDarkVariant" class="relative w-screen h-full overflow-hidden">
 
   <!-- Carousel indicators -->
   <div class="absolute inset-x-0 bottom-0 z-[2] px-[15%] pb-4 flex list-none justify-center gap-1">
@@ -74,7 +74,7 @@
 
   <!-- Carousel items -->
    <!-- after:clear-both after:block after:content-[''] overflow-y-hidden -->
-  <div class="w-screen h-screen grid">
+  <div class="w-screen h-full grid">
 {#each slideDetails as slide}
     <div class="relative overflow-hidden flex justify-center items-center col-start-1 col-end-1 row-start-1 row-end-1 shrink-0 {slide.id == currSlide ? 'slide-move-in':'slide-move-out'}">
       <img

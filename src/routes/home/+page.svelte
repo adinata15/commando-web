@@ -9,27 +9,27 @@
 	[
 		{
 			id: 0,
-			title: "title",
-			img_src: "./email.png",
-			description: "24/7 service"
+			title: "Easiness",
+			img_src: "./dollar.png",
+			description: "Financial transaction"
 		},
 		{
 			id: 1,
-			title: "title",
-			img_src: "./email.png",
-			description: "24/7 service"
+			title: "support",
+			img_src: "./support.png",
+			description: "24 hour on day"
 		},
 		{
 			id: 2,
-			title: "title",
-			img_src: "./email.png",
-			description: "24/7 service"
+			title: "Delivery",
+			img_src: "./fast.png",
+			description: "Within the country"
 		}, 
  		{
 			id: 3,
-			title: "title",
-			img_src: "./email.png",
-			description: "24/7 service"
+			title: "warranty",
+			img_src: "./warranty.png",
+			description: "+ 365 days"
 		}, 
 	]
 
@@ -40,31 +40,27 @@
 			description: "Produk"
 		},
 		{
-			img_src: "./simbol_denryo.png",
-			description: "Produk"
-		},
-		{
-			img_src: "./simbol_denryo.png",
-			description: "Produk"
-		},
-		{
-			img_src: "./simbol_denryo.png",
-			description: "Produk"
-		},
-		{
 			img_src: "./product_2.jpg",
 			description: "Produk"
 		},
 		{
-			img_src: "./simbol_denryo.png",
+			img_src: "./product_3.jpg",
 			description: "Produk"
 		},
 		{
-			img_src: "./simbol_denryo.png",
+			img_src: "./product_4.jpg",
 			description: "Produk"
 		},
 		{
-			img_src: "./simbol_denryo.png",
+			img_src: "./product_5.jpg",
+			description: "Produk"
+		},
+		{
+			img_src: "./product_6.jpg",
+			description: "Produk"
+		},
+		{
+			img_src: "./logo_kubota.jpg",
 			description: "Produk"
 		},
 	]
@@ -102,23 +98,18 @@
 <div class="DemoPage relative flex flex-col w-screen overflow-x-hidden">
 
 	<!-- Landing page -->
-	<div class="LandingPage flex flex-col w-screen mt-[20vh] h-[80vh]">
+	<div class="LandingPage flex flex-col w-screen mt-[20vh] h-[60vh]">
 		<!-- landing view -->
 		<div class="Header h-full flex flex-col justify-center items-center gap-6">
 			<FullPageCarousel />
-		<!-- <div class="LandingPageTitle self-stretch text-center text-black text-6xl font-bold font-['Inter']">Landing page title</div>
-		<div class="AndASubheadingDescribingYourSiteToo self-stretch text-center text-zinc-500 ">And a subheading describing your site, too</div>
-		<div class="Button px-6 py-3.5 bg-black rounded-lg shadow justify-center items-center gap-2 flex">
-			<div class="Button text-white text-base font-medium font-['Inter'] leading-normal">Button</div>
-		</div> -->
 		</div>
 	</div>
 
 	<!-- Four stuff -->
 	<div class="flex gap-6 justify-center items-center h-1/6 w-screen p-6">
 		{#each cards as card}
-		<div class="Card h-full w-50 flex justify-center items-center gap-2 p-2 border-solid border-4 border-gray-600 rounded-2xl">
-			<img class="h-2/3 max-w-20 object-contain" src={card.img_src} alt="icon" />
+		<div class="Card h-full basis-1/5 flex justify-center items-center gap-3 p-2 border-solid border-4 border-gray-600 rounded-2xl">
+			<img class="h-5/8 max-w-16 object-contain" src={card.img_src} alt={card.description} />
 			<div class="flex flex-col">
 				<h2 class="uppercase"> {card.title} </h2>
 				<p> {card.description} </p>
@@ -129,17 +120,17 @@
 
 	<!-- Products carousel -->
 	<div class="w-screen flex flex-col p-6 h-auto">
-		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Inter'] leading-10 uppercase">Products and services</h1>
+		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Roboto'] leading-10 uppercase">Products and services</h1>
 		<div class="w-full h-1 bg-gray-500" />
 	</div>
-	<div class="Products w-full h-56 flex justify-center items-center">
+	<div class="w-full h-72  flex flex-col justify-center items-center p-6 bg-gray-100">
 		<Carousel.Root
 			plugins={[
 				Autoplay({
 				delay: 2000,
 				}),
 			]}	
-			class="w-2/3"
+			class="w-5/6"
 		>
 			<Carousel.Content class="-ml-1">
 				{#each products as product}
@@ -157,8 +148,11 @@
 				</Carousel.Item>
 				{/each}
 			</Carousel.Content>
-			<Carousel.Previous />
-			<Carousel.Next />
+
+			<div class="flex justify-center items-center gap-2">
+				<Carousel.Previous class="relative h-8 w-8 rounded-sm" />
+				<Carousel.Next class="relative h-8 w-8 rounded-sm" />
+			</div>
 		</Carousel.Root>	
 	</div>
 
@@ -170,16 +164,16 @@
 			As a technology trading company we keep a firm grasp on market trends, and utilize our global network to provide our customers with the most up-to-date information, the best products, and the most reliable services. In cooperation with our manufacturing partners, it is our mission to promote industry and foster a prosperous society.”
 			Since SUN-WA was founded, the three elements that our company has strived to keep in harmony and develop are our customers, our shareholders and our employees; as well as electrics, electronics and machinery.
 		  </h2>
-		  <Button class="px-6 py-3.5 bg-black rounded-lg text-white text-base font-medium font-['Inter'] leading-normal" type="submit">Read More</Button>
+		  <Button class="px-6 py-3.5 bg-black rounded-lg text-white text-base font-medium font-['Roboto'] leading-normal" type="submit">Read More</Button>
 		</div>
 		<div class="ImageRight h-screen w-1/2 bg-white flex items-center pr-6">
-			<img class="Image max-w-full" src="./denryo_placeholder.jpg" alt="some images"/>
+			<img class="Image max-w-full" src="./origin_denryo.jpg" alt="some images"/>
 		</div>
 	</div>
 
 	<!-- News carousel -->
-	<div class="w-screen flex flex-col p-6 h-auto">
-		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Inter'] leading-10 uppercase">sio sio e gosip</h1>
+	<!-- <div class="w-screen flex flex-col p-6 h-auto">
+		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Roboto'] leading-10 uppercase">sio sio e gosip</h1>
 		<div class="w-full h-1 bg-gray-500" />
 	</div>
 
@@ -197,11 +191,11 @@
 			</Card.Root>
 		</div>
 		{/each}
-	</div>
+	</div> -->
 
 	<!-- Partners -->
 	<div class="w-screen flex flex-col p-6 h-auto">
-		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Inter'] leading-10 uppercase mx-auto">Peng yiu</h1>
+		<h1 class="ProductsTitle py-2 text-xl font-semibold font-['Roboto'] leading-10 uppercase">Partners</h1>
 		<div class="w-full h-1 bg-gray-500" />
 
 		<div class="Products w-full my-2 h-56 flex justify-between items-center gap-2 border-gray-400 border-2">
@@ -211,6 +205,7 @@
 			</div>
 			{/each}
 		</div>
+		<Button class="mx-auto py-2 px-6 w-32 h-16 bg-white rounded-lg text-green text-base font-medium font-['Roboto'] leading-normal border-green-300 border hover:bg-green-100" type="submit">Read More</Button>
 	</div>
 
 
@@ -223,7 +218,7 @@
 		  <h1 class="Heading">Heading</h1>
 		  <h2 class="ASubheadingForThisSectionAsLongOrAsShortAsYouLike self-stretch text-zinc-500 ">A subheading for this section, as long or as short as you like</h2>
 		  <div class="Button flex px-6 py-3.5 bg-black rounded-lg justify-center items-center">
-			<div class="Button text-white text-base font-medium font-['Inter'] leading-normal">Button</div>
+			<div class="Button text-white text-base font-medium font-['Roboto'] leading-normal">Button</div>
 		  </div>
 		</div>
 	</div> -->
@@ -252,14 +247,32 @@
 
   <style lang="postcss">
 	h1{
-		@apply text-4xl font-semibold font-['Inter'] leading-10;
+		@apply text-4xl font-semibold font-['Roboto'] leading-10;
 	}
 	
 	h2{
-		@apply text-2xl font-normal font-['Inter'] leading-9;
+		@apply text-2xl font-normal font-['Roboto'] leading-9;
 	}
 
 	p{
-		@apply text-xl font-medium font-['Inter'] leading-loose;
+		@apply text-xl font-medium font-['Roboto'] leading-loose;
 	}
+
+	.gradient-container {
+		overflow: hidden;
+		position: relative;
+		mix-blend-mode: normal;
+	}
+
+  /* mask for real object */
+  .gradient-container::after {
+    position: absolute;
+    content: "";
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+  }
   </style>
