@@ -117,19 +117,8 @@
 				<h2 class="uppercase"> {card.title} </h2>
 				<p> {card.description} </p>
 			</div>
-			<!-- <span class="text-2xl font-semibold">{product.description}</span> -->
 			</Card.Content>
 		</Card.Root>
-<!-- 
-		<div class="Card h-full basis-1/5 flex justify-center items-center gap-3 p-2 border-solid border-4 border-gray-600 rounded-2xl">
-			Card.
-
-			<img class="h-5/8 max-w-16 object-contain" src={card.img_src} alt={card.description} />
-			<div class="flex flex-col">
-				<h2 class="uppercase"> {card.title} </h2>
-				<p> {card.description} </p>
-			</div>
-		</div>	 -->
 		{/each}
 	</div>
 
