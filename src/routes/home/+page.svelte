@@ -11,7 +11,7 @@
 			id: 0,
 			title: "Easiness",
 			img_src: "./dollar.png",
-			description: "Financial transaction"
+			description: "Quick transaction"
 		},
 		{
 			id: 1,
@@ -108,13 +108,28 @@
 	<!-- Four stuff -->
 	<div class="flex gap-6 justify-center items-center h-1/6 w-screen p-6">
 		{#each cards as card}
+		<Card.Root>
+			<Card.Content
+			class="h-full min-w-72 basis-1/5 flex justify-center items-center gap-3 p-2 border-solid border-2 border-gray-600 rounded-2xl bg-gray-100"
+			>
+			<img class="h-5/8 max-w-16 object-contain" src={card.img_src} alt={card.description}  />
+			<div class="flex flex-col">
+				<h2 class="uppercase"> {card.title} </h2>
+				<p> {card.description} </p>
+			</div>
+			<!-- <span class="text-2xl font-semibold">{product.description}</span> -->
+			</Card.Content>
+		</Card.Root>
+<!-- 
 		<div class="Card h-full basis-1/5 flex justify-center items-center gap-3 p-2 border-solid border-4 border-gray-600 rounded-2xl">
+			Card.
+
 			<img class="h-5/8 max-w-16 object-contain" src={card.img_src} alt={card.description} />
 			<div class="flex flex-col">
 				<h2 class="uppercase"> {card.title} </h2>
 				<p> {card.description} </p>
 			</div>
-		</div>
+		</div>	 -->
 		{/each}
 	</div>
 
@@ -205,7 +220,8 @@
 			</div>
 			{/each}
 		</div>
-		<Button class="mx-auto py-2 px-6 w-32 h-16 bg-white rounded-lg text-green text-base font-medium font-['Roboto'] leading-normal border-green-300 border hover:bg-green-100" type="submit">Read More</Button>
+
+		<Button class="mx-auto py-2 px-6 w-32 h-16 bg-white rounded-lg text-green text-base font-medium font-['Roboto'] leading-normal no-underline border-green-300 border hover:bg-green-100" variant="link" href="/about">Read More</Button>
 	</div>
 
 
