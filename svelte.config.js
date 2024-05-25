@@ -12,7 +12,7 @@ const config = {
 			"@/*": "./src/lib/*",
 		},
 		paths: {
-            base: process.env.NODE_ENV === 'production' ? '/sveltekit-github-pages' : '',
+            base: process.env.NODE_ENV === 'production' ? '/commando-web' : '',
         },
 	},
 	preprocess: vitePreprocess()
