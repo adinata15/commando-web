@@ -17,13 +17,11 @@
       name: "sertifikasi",
       link: `${base}/certificates`,
     },
-
     {
       id: 3,
       name: "hubungi kami",
-      link: `${base}/about-us`,
+      link: `${base}/contact-us`,
     },
-
     {
       id: 4,
       name: "katalog",
