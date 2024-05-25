@@ -44,7 +44,7 @@ let companyLocation = [
 </script>
 
 <!-- Footer top (image) -->
-<div class="FooterTop flex justify-between items-center h-56 w-screen">
+<div class="FooterTop flex justify-between items-center h-48 w-screen">
   <div class="ImageCenter bg-white h-full w-1/2 flex flex-col gap-2 justify-start items-start p-6">
     <h1>Follow us</h1>
     <h2>Follow for more promotion</h2>
@@ -62,7 +62,7 @@ let companyLocation = [
 
 </div>
 
-<div class="FooterLinks bg-gray-500 h-80 w-screen flex flex-col justify-between items-start gap-2 p-6">
+<div class="FooterLinks bg-gray-500 h-64 w-screen flex flex-col justify-between items-start gap-2 p-6">
 
   <!-- Main Footer -->
   <div class="MainFooter w-full h-full flex justify-between items-start gap-2">
@@ -164,7 +164,7 @@ let companyLocation = [
   } */
 
   p, li{
-    @apply text-base font-medium font-['Inter'] leading-loose
+    @apply text-base font-medium font-['Inter'] leading-normal
   }
 
   .gradient-container {
