@@ -57,7 +57,7 @@ let companyLocation = [
   </div>
 
   <div class="gradient-container h-full w-1/2">
-    <img src="./denryo_placeholder.jpg" alt="Denryo" class="object-contain" />
+    <img src="./denryo_placeholder.jpg" alt="Denryo" class="object-cover min-h-full min-w-full" />
   </div>
 
 </div>
