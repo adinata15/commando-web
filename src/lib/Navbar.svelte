@@ -1,31 +1,33 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
   let subPages = [
     {
       id: 0,
       name: "TENTANG KAMI",
-      link: "/about",
+      link: `${base}/about`,
     },
     {
       id: 1,
       name: "PRODUK",
-      link: "/about",
+      link: `${base}/product`,
     },
     {
       id: 2,
       name: "sertifikasi",
-      link: "/certification",
+      link: `${base}/certificates`,
     },
 
     {
       id: 3,
       name: "hubungi kami",
-      link: "/contact-us",
+      link: `${base}/about-us`,
     },
 
     {
       id: 4,
       name: "katalog",
-      link: "/shop",
+      link: `${base}/catalog`,
     },
   ];
 
