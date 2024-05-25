@@ -5,6 +5,8 @@
 	import * as Carousel from "$lib/components/ui/carousel/index.js";
 	import Autoplay from "embla-carousel-autoplay";
 
+	import { base } from '$app/paths';
+
 	let cards = 
 	[
 		{
@@ -210,7 +212,7 @@
 			{/each}
 		</div>
 
-		<Button class="mx-auto py-2 px-6 w-32 h-16 bg-white rounded-lg text-green text-base font-medium font-['Roboto'] leading-normal no-underline border-green-300 border hover:bg-green-100" variant="link" href="/about">Read More</Button>
+		<Button class="mx-auto py-2 px-6 w-32 h-16 bg-white rounded-lg text-green text-base font-medium font-['Roboto'] leading-normal no-underline border-green-300 border hover:bg-green-100" variant="link" href="{base}/about">Read More</Button>
 	</div>
 
 
