@@ -150,11 +150,11 @@ let companyLocation = [
 
 <style lang="postcss">
   h1 {
-    @apply text-xl font-semibold font-['Inter'] leading-10 uppercase
+    @apply text-xl font-semibold font-['Roboto'] leading-10 uppercase
   }
 
   h2{
-    @apply text-lg font-normal font-['Inter'] leading-9
+    @apply text-lg font-normal font-['Roboto'] leading-9
   }
 
   /* h2::before{
@@ -164,7 +164,7 @@ let companyLocation = [
   } */
 
   p, li{
-    @apply text-base font-medium font-['Inter'] leading-normal
+    @apply text-base font-medium font-['Roboto'] leading-normal
   }
 
   .gradient-container {
