@@ -265,14 +265,14 @@
 		@apply text-xl font-medium font-['Roboto'] leading-loose;
 	}
 
-	.gradient-container {
+	/* .gradient-container {
 		overflow: hidden;
 		position: relative;
 		mix-blend-mode: normal;
-	}
+	} */
 
   /* mask for real object */
-  .gradient-container::after {
+  /* .gradient-container::after {
     position: absolute;
     content: "";
     left: 0px;
@@ -281,5 +281,5 @@
     width: 100%;
     background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 1) 100%);
     pointer-events: none;
-  }
+  } */
   </style>
