@@ -56,11 +56,11 @@
       {#each subPages as page}
         <a
           href={page.link}
-          class="Page text-black text-xl font-medium font-['Inter'] uppercase no-underline"
+          class="Page text-black text-xl font-medium font-['Roboto'] uppercase no-underline"
           >{page.name}</a
         >
         <!-- <button
-          class="Page text-black text-xl font-medium font-['Inter'] uppercase no-underline cursor-pointer w-full h-full text-nowrap" 
+          class="Page text-black text-xl font-medium font-['Roboto'] uppercase no-underline cursor-pointer w-full h-full text-nowrap" 
           on:click={ () => { chosenSubMenu = page.id}}
         >
           {page.name}
@@ -75,7 +75,7 @@
         class="Button px-6 py-3.5 bg-black rounded-lg shadow justify-center items-center gap-2 flex"
       >
         <div
-          class="Button text-white text-base font-medium font-['Inter'] leading-normal"
+          class="Button text-white text-base font-medium font-['Roboto'] leading-normal"
         >
           Button
         </div>
@@ -92,7 +92,7 @@
         src="./phone-call.png"
         alt="phone"
       />
-      <div class="text-black text-xl font-medium font-['Inter']">
+      <div class="text-black text-xl font-medium font-['Roboto']">
         (061) 4566725
       </div>
     </div>
@@ -103,7 +103,7 @@
         src="./email.png"
         alt="mail"
       />
-      <div class="text-black text-xl font-medium font-['Inter']">
+      <div class="text-black text-xl font-medium font-['Roboto']">
         sales@denryo.co.id
       </div>
     </div>
