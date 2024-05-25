@@ -12,7 +12,7 @@ const config = {
 			"@/*": "./src/lib/*",
 		},
 		paths: {
-            base: process.env.NODE_ENV === 'production' ? 'adinata15.github.io/commando-web/' : '',
+            base: process.env.NODE_ENV === 'production' ? 'https://adinata15.github.io/commando-web/' : '',
         },
 	},
 	preprocess: vitePreprocess()
