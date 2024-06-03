@@ -7,7 +7,7 @@
   let showPanel = false;
 </script>
  
-<div class="flex place-content-center">
+<div class="flex place-content-center mt-[20vh]">
   <DropdownMenu.Root>
    <DropdownMenu.Trigger asChild let:builder>
      <Button variant="outline" builders={[builder]} class="w-96">Open</Button>

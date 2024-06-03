@@ -38,9 +38,6 @@ let companyLocation = [
     details: "Location details",
   },
 ]
-
-
-
 </script>
 
 <!-- Footer top (image) -->
@@ -57,7 +54,7 @@ let companyLocation = [
   </div>
 
   <div class="gradient-container h-full w-1/2">
-    <img src="./denryo_placeholder.jpg" alt="Denryo" class="object-cover min-h-full min-w-full" />
+    <img src="./origin_denryo.jpg" alt="Denryo" class="object-cover min-h-full min-w-full" />
   </div>
 
 </div>
