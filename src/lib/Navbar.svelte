@@ -3,27 +3,27 @@
 
   let subPages = [
     {
-      id: 0,
+      name: "Denryo®",
+      link: `${base}/`,
+      color: " text-red-500",
+    },
+    {
       name: "TENTANG KAMI",
       link: `${base}/about`,
     },
     {
-      id: 1,
       name: "PRODUK",
       link: `${base}/product`,
     },
     {
-      id: 2,
       name: "sertifikasi",
       link: `${base}/certificates`,
     },
     {
-      id: 3,
       name: "hubungi kami",
       link: `${base}/contact-us`,
     },
     {
-      id: 4,
       name: "katalog",
       link: `${base}/catalog`,
     },
@@ -40,7 +40,7 @@
 
 <!-- Navbar -->
 <div
-  class="Navbar flex flex-col z-10 fixed top-0 left-0 right-0 w-screen h-[20vh] min-h-10 bg-white"
+  class="Navbar flex flex-col z-10 fixed top-0 left-0 right-0 w-screen h-[15vh] min-h-10 bg-white"
 >
   <div
     class="Navigation-top relative flex h-1/2 w-screen justify-between items-center px-6 py-2"
@@ -52,34 +52,19 @@
       src="./logo.png"
     />
 
-    <div class="Items flex self-stretch justify-end items-center gap-12">
-      {#each subPages as page}
+    <div class="Items flex self-stretch justify-end items-center">
+      {#each subPages as page, index}
         <a
           href={page.link}
-          class="Page text-black text-xl font-medium font-['Roboto'] uppercase no-underline"
+          class="Page text-black text-l font-medium font-['Roboto'] uppercase no-underline {page.color} {index === subPages.length-1 ? "": "border-r-2"} border-black px-8"
           >{page.name}</a
         >
-        <!-- <button
-          class="Page text-black text-xl font-medium font-['Roboto'] uppercase no-underline cursor-pointer w-full h-full text-nowrap" 
-          on:click={ () => { chosenSubMenu = page.id}}
-        >
-          {page.name}
-        </button> -->
         {/each}
 
         <div class="absolute bg-red-500 inset-0 popup-submenu {chosenSubMenu === -1 ? "opacity-0":"opacity-100"}">
           {chosenSubMenu}
         </div>
       
-        <!-- <div
-        class="Button px-6 py-3.5 bg-black rounded-lg shadow justify-center items-center gap-2 flex"
-      >
-        <div
-          class="Button text-white text-base font-medium font-['Roboto'] leading-normal"
-        >
-          Button
-        </div>
-      </div> -->
     </div>
   </div>
 
@@ -88,23 +73,29 @@
   >
     <div class="flex h-1/2 min-h-10 items-center justify-center gap-2">
       <img
-        class="object-contain h-full max-w-full"
+        class="object-contain max-h-[70%] max-w-full"
         src="./phone-call.png"
         alt="phone"
       />
-      <div class="text-black text-xl font-medium font-['Roboto']">
-        (061) 4566725
+      <div class="text-black text-l font-medium font-['Roboto']">
+        (+62) 0851 7687 9999
       </div>
     </div>
 
     <div class="flex h-1/2 min-h-10 items-center justify-center gap-2">
       <img
-        class="object-contain h-full max-w-full"
+        class="object-contain max-h-[70%] max-w-full"
         src="./email.png"
         alt="mail"
       />
-      <div class="text-black text-xl font-medium font-['Roboto']">
+      <div class="text-black text-l font-medium font-['Roboto']">
         sales@denryo.co.id
+      </div>
+    </div>
+    
+    <div class="flex h-1/2 min-h-10 items-center justify-center gap-2">
+      <div class="text-black text-l font-medium font-['Roboto']">
+        Senin - Minggu 09.00 - 22.00
       </div>
     </div>
   </div>

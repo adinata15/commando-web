@@ -16,7 +16,7 @@
     {
       id: 2,
       title: "Slide 3",
-      img_src: "./nature_placeholder.jpg",
+      img_src: "./mesin_carousel.jpg",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }, 
   ]
@@ -79,7 +79,7 @@
     <div class="relative overflow-hidden flex justify-center items-center col-start-1 col-end-1 row-start-1 row-end-1 shrink-0 {slide.id == currSlide ? 'slide-move-in':'slide-move-out'}">
       <img
         src={slide.img_src}
-        class="block w-screen h-full object-cover"
+        class="block min-w-full w-screen h-auto object-cover"
         alt="some placeholder" />
       <!-- <div class="absolute block inset-x-[15%] bottom-5 py-5 text-center text-black md:block">
         <h5 class="text-xl">{slide.title}</h5>
