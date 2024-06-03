@@ -42,21 +42,19 @@
 <div
   class="Navbar flex flex-col z-10 fixed top-0 left-0 right-0 w-screen h-[15vh] min-h-10 bg-white"
 >
-  <div
-    class="Navigation-top relative flex h-1/2 w-screen justify-between items-center px-6 py-2"
-  >
-    <img
-      class="object-contain h-full max-w-full"
-      loading="lazy"
-      alt="Daryo"
-      src="./logo.png"
-    />
+  <img
+    class="object-contain h-[10vh] max-w-full absolute my-[2vh] mx-3"
+    loading="lazy"
+    alt="Daryo"
+    src="./logo.png"
+  />
 
+  <div class="Navigation-top relative h-1/2 w-screen py-2" >
     <div class="Items flex self-stretch justify-end items-center">
       {#each subPages as page, index}
         <a
           href={page.link}
-          class="Page text-black text-l font-medium font-['Roboto'] uppercase no-underline {page.color} {index === subPages.length-1 ? "": "border-r-2"} border-black px-8"
+          class="Page text-black text-l font-medium font-['Roboto'] uppercase no-underline {page.color} {index === subPages.length-1 ? "": "border-r-2"} border-black px-6"
           >{page.name}</a
         >
         {/each}
