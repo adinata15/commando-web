@@ -27,10 +27,10 @@
   {
     clearInterval(timer)
     currSlide = (currSlide + 1) % slideDetails.length
-    timer = setInterval(handleNext, 9000)
+    timer = setInterval(handleNext, 8000)
   }
 
-  let timer = setInterval(handleNext, 9000)
+  let timer = setInterval(handleNext, 8000)
   
   let handlePrev = function():void
   {
@@ -45,7 +45,7 @@
     {
       currSlide -= 1
     }
-    timer = setInterval(handleNext, 9000)
+    timer = setInterval(handleNext, 8000)
   }
 
   
