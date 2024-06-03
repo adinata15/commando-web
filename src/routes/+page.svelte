@@ -164,13 +164,13 @@
 
 	<!-- Subsection -->
 	<div class="Subsection1 h-screen w-screen flex justify-between">
-		<div class="DetailLeft h-screen w-1/2 flex flex-col justify-center items-start px-6 bg-white">
-		  <h1 class="Heading self-stretch uppercase">Asal usul the legen of aang</h1>
-		  <h2 class="ASubheadingForThisSectionAsLongOrAsShortAsYouLike self-stretch text-zinc-500 pt-2">
-			As a technology trading company we keep a firm grasp on market trends, and utilize our global network to provide our customers with the most up-to-date information, the best products, and the most reliable services. In cooperation with our manufacturing partners, it is our mission to promote industry and foster a prosperous society.”
-			Since SUN-WA was founded, the three elements that our company has strived to keep in harmony and develop are our customers, our shareholders and our employees; as well as electrics, electronics and machinery.
+		<div class="DetailLeft h-screen w-1/2 flex flex-col justify-center items-start px-6 bg-white gap-2">
+		  <h1 class="Heading self-stretch uppercase">Tentang Kami</h1>
+		  <h2 class="ASubheadingForThisSectionAsLongOrAsShortAsYouLike self-stretch text-zinc-500 py-2">
+			Denryo Indonesia didirikan pada tahun 2016 dengan visi menjadi pemimpin dalam penyediaan solusi elektrikal berkualitas tinggi. Kami menyediakan Generator Set, panel ATS, alternator, dan kebutuhan elektrikal lainnya dengan menggunakan teknologi canggih dari Jepang yang terkenal akan keandalannya.
 		  </h2>
-		  <Button class="px-6 py-3.5 bg-black rounded-lg text-white text-base font-medium font-['Roboto'] leading-normal" type="submit">Read More</Button>
+			<Button class="py-2 px-6 w-auto h-auto bg-white rounded-lg text-green text-base font-medium font-['Roboto']  no-underline border-green-500 border-2 hover:bg-green-200" variant="link" href="{base}/about">Read More</Button>
+		  <!-- <Button class="px-6 py-3 bg-black rounded-lg text-white text-base font-medium font-['Roboto'] leading-normal" variant="link" href="{base}/about">Read More</Button> -->
 		</div>
 		<div class="ImageRight h-screen w-1/2 bg-white flex items-center pr-6">
 			<img class="Image max-w-full" src="./origin_denryo.jpg" alt="some images"/>
