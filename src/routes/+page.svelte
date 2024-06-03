@@ -100,7 +100,7 @@
 <div class="DemoPage relative flex flex-col w-screen overflow-x-hidden">
 
 	<!-- Landing page -->
-	<div class="LandingPage flex flex-col w-screen mt-[20vh] h-[60vh]">
+	<div class="LandingPage flex flex-col w-screen mt-[15vh] h-[60vh]">
 		<!-- landing view -->
 		<div class="Header h-full flex flex-col justify-center items-center gap-6">
 			<FullPageCarousel />
